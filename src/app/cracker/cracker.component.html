@@ -1,9 +1,23 @@
-<p>cracker works!</p>
-<ng-form
-  [formGroup]="inputForm"
->
+<main>
+  <header>
+    Test
+  </header>
 
-<tui-input formControlName="textValue">
-  test
-</tui-input>
-</ng-form>
+  <tui-tabs [(activeItemIndex)]="activeItemIndex">
+    <button
+      tuiTab
+    >
+      <tui-svg
+        src="tuiIconUnlockLarge"
+      ></tui-svg>
+    </button>
+    <button
+      tuiTab
+    >
+      <tui-svg
+        src="tuiIconLockLarge"
+      ></tui-svg>
+    </button>
+  </tui-tabs>
+  <app-cracker-input [data]="activeItemIndex"></app-cracker-input>
+</main>

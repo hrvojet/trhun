@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {TuiInputModule} from "@taiga-ui/kit";
+import {TuiInputModule, TuiInputNumberModule, TuiTabsModule} from "@taiga-ui/kit";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {TuiSvgModule, TuiTextfieldControllerModule} from "@taiga-ui/core";
+import {CrackerInputComponent} from "./cracker-input/cracker-input.component";
 
 @Component({
   selector: 'app-cracker',
@@ -8,12 +10,19 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular
   imports: [
     TuiInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TuiTextfieldControllerModule,
+    TuiTabsModule,
+    TuiSvgModule,
+    TuiInputNumberModule,
+    CrackerInputComponent
   ],
   templateUrl: './cracker.component.html',
   styleUrl: './cracker.component.scss'
 })
 export class CrackerComponent implements OnInit {
+
+  activeItemIndex = 0;
 
   readonly inputForm = new FormGroup({
     textValue: new FormControl('')
@@ -23,6 +32,5 @@ export class CrackerComponent implements OnInit {
   ngOnInit(): void {
     this.inputForm.valueChanges.subscribe((value) => console.log(value));
   }
-
 
 }

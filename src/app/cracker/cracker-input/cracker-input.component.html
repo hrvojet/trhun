@@ -1,0 +1,18 @@
+<p>cracker-input works!</p>
+<p> index: {{ data }}</p>
+<ng-form
+  [formGroup]="inputForm"
+>
+  <tui-input
+    formControlName="textValue"
+    tuiTextfieldSize="l"
+    [tuiTextfieldCleaner]="true"
+    [tuiTextfieldLabelOutside]="true"
+  >
+    Type in
+    <input
+      tuiTextfield
+      type="text"
+    />
+  </tui-input>
+</ng-form>
