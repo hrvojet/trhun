@@ -1,10 +1,7 @@
-<p>cracker-input works!</p>
-<p> index: {{ data }}</p>
-<ng-form
-  [formGroup]="inputForm"
->
+<p> Question: {{ incomingRaa.riddle }}</p>
+<ng-form>
   <tui-input
-    formControlName="textValue"
+    [formControl]="textValue"
     tuiTextfieldSize="l"
     [tuiTextfieldCleaner]="true"
     [tuiTextfieldLabelOutside]="true"
@@ -15,4 +12,11 @@
       type="text"
     />
   </tui-input>
+
+  <button
+    tuiButton
+    style="margin: 34px auto"
+    (click)="submitAnswer()"
+  >Submit</button>
+
 </ng-form>
