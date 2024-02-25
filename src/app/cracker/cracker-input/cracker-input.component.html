@@ -1,25 +1,23 @@
-<p> Question: {{ incomingRaa.riddle }}</p>
+<p>Question: {{ incomingRaa.riddle }}</p>
 <ng-form>
-  <tui-input
-    [formControl]="textValue"
-    tuiTextfieldSize="l"
-    [tuiTextfieldCleaner]="true"
-    [tuiTextfieldLabelOutside]="true"
-  >
-    Type in
-    <input
-      tuiTextfield
-      type="text"
-    />
-  </tui-input>
-  <div>
-    <button
-      tuiButton
-      [ngClass]="{'shake-class': isWrongError}"
-      [disabled]="incomingRaa.icon === LOCKSTATUS.UNLOCKED"
-      (click)="submitAnswer()"
-    >Submit</button>
-  </div>
-  <!--<img src="assets/img/img.png" width="30%">-->
-
+	<tui-input
+		[formControl]="textValue"
+		tuiTextfieldSize="l"
+		[tuiTextfieldCleaner]="true"
+		[tuiTextfieldLabelOutside]="true"
+	>
+		Type in
+		<input tuiTextfield type="text" />
+	</tui-input>
+	<div>
+		<button
+			tuiButton
+			[ngClass]="{ 'shake-class': isWrongError }"
+			[disabled]="incomingRaa.icon === LOCKSTATUS.UNLOCKED"
+			(click)="submitAnswer()"
+		>
+			Submit
+		</button>
+	</div>
+	<!--<img src="assets/img/img.png" width="30%">-->
 </ng-form>

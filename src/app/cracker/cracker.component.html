@@ -1,31 +1,21 @@
 <main>
-  <header>
-    Test
-  </header>
+	<header>Test</header>
 
-  <tui-tabs [(activeItemIndex)]="currentRAA.id">
-    @for (rAndA of riddlesAndAnswers; track rAndA.id ) {
-      <button
-        tuiTab
-        [disabled]="rAndA.disabled"
-        [ngClass]="{'unlock-class': rAndA.icon === LOCKSTATUS.UNLOCKED}"
-        (click)="sendToChild(rAndA)"
-      >
-        <tui-svg
-          src="{{rAndA.icon}}"
-        ></tui-svg>
-      </button>
-    }
-  </tui-tabs>
-  <app-cracker-input
-    [incomingRaa]="currentRAA"
-    (rAAEmitter)="receiveData($event)"
-  ></app-cracker-input>
+	<tui-tabs [(activeItemIndex)]="currentRAA.id">
+		@for (rAndA of riddlesAndAnswers; track rAndA.id) {
+			<button
+				tuiTab
+				[disabled]="rAndA.disabled"
+				[ngClass]="{ 'unlock-class': rAndA.icon === LOCKSTATUS.UNLOCKED }"
+				(click)="sendToChild(rAndA)"
+			>
+				<tui-svg src="{{ rAndA.icon }}"></tui-svg>
+			</button>
+		}
+	</tui-tabs>
+	<app-cracker-input [incomingRaa]="currentRAA" (rAAEmitter)="receiveData($event)"></app-cracker-input>
 
-  <div *ngIf="revealCryptexAnswer">
-    <button
-      tuiButton
-    >Reveal answer!</button>
-  </div>
-
+	<div *ngIf="revealCryptexAnswer">
+		<button tuiButton>Reveal answer!</button>
+	</div>
 </main>

@@ -1,3 +1,3 @@
 export const environment = {
-  test: 'asdasda'
+	test: 'asdasda',
 };

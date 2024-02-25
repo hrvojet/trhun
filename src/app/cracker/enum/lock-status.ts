@@ -1,4 +1,4 @@
 export enum LockStatus {
-  LOCKED = 'tuiIconLockLarge',
-  UNLOCKED = 'tuiIconUnlockLarge'
+	LOCKED = 'tuiIconLockLarge',
+	UNLOCKED = 'tuiIconUnlockLarge',
 }

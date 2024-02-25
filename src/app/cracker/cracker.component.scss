@@ -1,27 +1,36 @@
 :host(app-cracker) {
-  max-width: 600px;
-  display: block;
-  margin: 55px auto;
+	max-width: 600px;
+	display: block;
+	margin: 55px auto;
 }
 
 header {
-  margin-bottom: 55px;
+	margin-bottom: 55px;
 }
 
 tui-tabs {
-  box-shadow: none !important;
-  justify-content: space-around;
+	box-shadow: none !important;
+	justify-content: space-around;
 }
 
 .unlock-class {
-  animation: vertical-unlock 0.35s 0s;
+	animation: vertical-unlock 0.35s 0s;
 }
 
 @keyframes vertical-unlock {
-  0% { transform: translateY(0) }
-  25% { transform: translateY(-8px) }
-  50% { transform: translateY(-16px) }
-  75% { transform: translateY(-8px) }
-  100% { transform: translateY(0) }
+	0% {
+		transform: translateY(0);
+	}
+	25% {
+		transform: translateY(-8px);
+	}
+	50% {
+		transform: translateY(-16px);
+	}
+	75% {
+		transform: translateY(-8px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
-
