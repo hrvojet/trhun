@@ -57,6 +57,8 @@ export class CrackerComponent implements OnInit {
       console.log('updating next');
       this.riddlesAndAnswers[$event.id + 1].disabled = false;
       this.currentRAA = this.riddlesAndAnswers[$event.id + 1];
+    } else {
+      console.log('winner!');
     }
 
     // TODO update here

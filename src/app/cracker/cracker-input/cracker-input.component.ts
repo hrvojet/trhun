@@ -1,7 +1,7 @@
 import {
   ChangeDetectorRef,
   Component,
-  EventEmitter,
+  EventEmitter, HostBinding,
   Input,
   OnChanges,
   OnDestroy,
@@ -17,6 +17,8 @@ import {environment} from "../../../environments/environment";
 import {Observable, Subscription} from "rxjs";
 import {Raa} from "../model/raa";
 import {LockStatus} from "../enum/lock-status";
+import {NgClass} from "@angular/common";
+import {trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-cracker-input',
@@ -27,14 +29,22 @@ import {LockStatus} from "../enum/lock-status";
     TuiInputModule,
     TuiInputPasswordModule,
     TuiTextfieldControllerModule,
-    TuiButtonModule
+    TuiButtonModule,
+    NgClass
   ],
   templateUrl: './cracker-input.component.html',
-  styleUrl: './cracker-input.component.scss'
+  styleUrl: './cracker-input.component.scss',
+  animations: [
+    trigger('shk',[
+
+    ])
+  ]
 })
 export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
   @Input() incomingRaa!: Raa;
   @Output() rAAEmitter: EventEmitter<Raa> = new EventEmitter();
+
+  isWrongError: boolean = false;
 
   obs$: Subscription | undefined;
 
@@ -67,6 +77,10 @@ export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
     if (this.textValue.value === this.incomingRaa.answer) {
       this.rAAEmitter.emit(this.incomingRaa);
       this.cdr.detectChanges();
+    } else {
+      this.isWrongError = true;
+      setTimeout(() => this.isWrongError = false, 350);
+
     }
   }
 

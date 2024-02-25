@@ -12,11 +12,13 @@
       type="text"
     />
   </tui-input>
-
-  <button
-    tuiButton
-    style="margin: 34px auto"
-    (click)="submitAnswer()"
-  >Submit</button>
+  <div>
+    <button
+      tuiButton
+      [ngClass]="{'shake-class': isWrongError}"
+      (click)="submitAnswer()"
+    >Submit</button>
+  </div>
+  <!--<img src="assets/img/img.png" width="30%">-->
 
 </ng-form>
