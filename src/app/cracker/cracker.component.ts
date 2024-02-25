@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {TuiInputModule, TuiInputNumberModule, TuiTabsModule} from "@taiga-ui/kit";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {TuiSvgModule, TuiTextfieldControllerModule} from "@taiga-ui/core";
+import {TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule} from "@taiga-ui/core";
 import {CrackerInputComponent} from "./cracker-input/cracker-input.component";
 import {Raa} from "./model/raa";
 import {LockStatus} from "./enum/lock-status";
+import {NgClass, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-cracker',
@@ -17,7 +18,10 @@ import {LockStatus} from "./enum/lock-status";
     TuiTabsModule,
     TuiSvgModule,
     TuiInputNumberModule,
-    CrackerInputComponent
+    CrackerInputComponent,
+    TuiButtonModule,
+    NgIf,
+    NgClass
   ],
   templateUrl: './cracker.component.html',
   styleUrl: './cracker.component.scss'
@@ -33,8 +37,9 @@ export class CrackerComponent implements OnInit {
     {id:1, riddle: 'What am I?', answer: 'de', icon: LockStatus.LOCKED, disabled: true},
     {id:2, riddle: 'Where am I?', answer: 'rr', icon: LockStatus.LOCKED, disabled: true},
   ]
-
   currentRAA = this.riddlesAndAnswers[0];
+
+  revealCryptexAnswer: boolean = false;
 
   readonly inputForm = new FormGroup({
     textValue: new FormControl('')
@@ -59,6 +64,7 @@ export class CrackerComponent implements OnInit {
       this.currentRAA = this.riddlesAndAnswers[$event.id + 1];
     } else {
       console.log('winner!');
+      this.revealCryptexAnswer = true;
     }
 
     // TODO update here

@@ -18,7 +18,6 @@ import {Observable, Subscription} from "rxjs";
 import {Raa} from "../model/raa";
 import {LockStatus} from "../enum/lock-status";
 import {NgClass} from "@angular/common";
-import {trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-cracker-input',
@@ -33,14 +32,10 @@ import {trigger} from "@angular/animations";
     NgClass
   ],
   templateUrl: './cracker-input.component.html',
-  styleUrl: './cracker-input.component.scss',
-  animations: [
-    trigger('shk',[
-
-    ])
-  ]
+  styleUrl: './cracker-input.component.scss'
 })
 export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
+  public LOCKSTATUS = LockStatus;
   @Input() incomingRaa!: Raa;
   @Output() rAAEmitter: EventEmitter<Raa> = new EventEmitter();
 
@@ -77,10 +72,12 @@ export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
     if (this.textValue.value === this.incomingRaa.answer) {
       this.rAAEmitter.emit(this.incomingRaa);
       this.cdr.detectChanges();
+      if (this.incomingRaa.id === 2) {
+        console.log('child FINAL!');
+      }
     } else {
       this.isWrongError = true;
       setTimeout(() => this.isWrongError = false, 350);
-
     }
   }
 

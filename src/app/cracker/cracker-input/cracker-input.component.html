@@ -16,6 +16,7 @@
     <button
       tuiButton
       [ngClass]="{'shake-class': isWrongError}"
+      [disabled]="incomingRaa.icon === LOCKSTATUS.UNLOCKED"
       (click)="submitAnswer()"
     >Submit</button>
   </div>

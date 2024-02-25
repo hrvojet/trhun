@@ -8,6 +8,7 @@
       <button
         tuiTab
         [disabled]="rAndA.disabled"
+        [ngClass]="{'unlock-class': rAndA.icon === LOCKSTATUS.UNLOCKED}"
         (click)="sendToChild(rAndA)"
       >
         <tui-svg
@@ -20,4 +21,11 @@
     [incomingRaa]="currentRAA"
     (rAAEmitter)="receiveData($event)"
   ></app-cracker-input>
+
+  <div *ngIf="revealCryptexAnswer">
+    <button
+      tuiButton
+    >Reveal answer!</button>
+  </div>
+
 </main>

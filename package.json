@@ -28,6 +28,7 @@
     "@taiga-ui/layout": "^3.67.0",
     "@taiga-ui/styles": "^3.67.0",
     "rxjs": "~7.8.0",
+    "splitting": "^1.0.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -36,6 +37,7 @@
     "@angular/cli": "^17.2.1",
     "@angular/compiler-cli": "^17.2.0",
     "@types/jasmine": "~5.1.0",
+    "@types/splitting": "^1.0.6",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
