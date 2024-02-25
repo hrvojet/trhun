@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TuiInputModule, TuiInputNumberModule, TuiTabsModule } from '@taiga-ui/kit';
+import { NgClass, NgIf } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiInputModule, TuiInputNumberModule, TuiTabsModule } from '@taiga-ui/kit';
+
 import { CrackerInputComponent } from './cracker-input/cracker-input.component';
-import { Raa } from './model/raa';
 import { LockStatus } from './enum/lock-status';
-import { NgClass, NgIf } from '@angular/common';
+import { Raa } from './model/raa';
 
 @Component({
 	selector: 'app-cracker',

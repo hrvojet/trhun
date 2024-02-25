@@ -2,23 +2,21 @@ import {
 	ChangeDetectorRef,
 	Component,
 	EventEmitter,
-	HostBinding,
 	Input,
 	OnChanges,
 	OnDestroy,
 	OnInit,
 	Output,
-	signal,
 	SimpleChanges,
 } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
-import { environment } from '../../../environments/environment';
-import { Observable, Subscription } from 'rxjs';
-import { Raa } from '../model/raa';
-import { LockStatus } from '../enum/lock-status';
 import { NgClass } from '@angular/common';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
+import { Subscription } from 'rxjs';
+
+import { LockStatus } from '../enum/lock-status';
+import { Raa } from '../model/raa';
 
 @Component({
 	selector: 'app-cracker-input',
