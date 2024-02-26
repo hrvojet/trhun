@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { Subscription } from 'rxjs';
 
@@ -29,6 +29,7 @@ import { Raa } from '../model/raa';
 		TuiTextfieldControllerModule,
 		TuiButtonModule,
 		NgClass,
+		TuiSvgModule,
 	],
 	templateUrl: './cracker-input.component.html',
 	styleUrl: './cracker-input.component.scss',
@@ -71,7 +72,6 @@ export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
 			this.rAAEmitter.emit(this.incomingRaa);
 			this.cdr.detectChanges();
 			if (this.incomingRaa.id === 2) {
-				console.log('child FINAL!');
 			}
 		} else {
 			this.isWrongError = true;
