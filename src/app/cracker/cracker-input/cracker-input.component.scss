@@ -4,11 +4,41 @@ div {
 	align-items: center;
 	margin-top: 38px;
 	margin-bottom: 38px;
+  width: 50%;
 }
 
 .shake-class {
 	animation: horizontal-shaking 0.35s 0s;
 }
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 66px auto 66px;
+}
+
+main p {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+ng-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+tui-input {
+  width: 50%;
+}
+
+button {
+  width: 100%;
+}
+
 
 @keyframes horizontal-shaking {
 	0% {

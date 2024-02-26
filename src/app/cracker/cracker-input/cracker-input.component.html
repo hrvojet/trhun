@@ -1,4 +1,8 @@
-<p>Question: {{ incomingRaa.riddle }}</p>
+<main>
+  <p [innerHTML]="incomingRaa.riddle">
+    <!--{{ incomingRaa.riddle }}-->
+  </p>
+</main>
 <ng-form>
 	<tui-input
 		[formControl]="textValue"

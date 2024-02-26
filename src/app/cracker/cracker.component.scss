@@ -1,7 +1,7 @@
 :host(app-cracker) {
 	max-width: 600px;
 	display: block;
-	margin: 55px auto;
+	margin: 95px auto;
 }
 
 header {
@@ -13,8 +13,24 @@ tui-tabs {
 	justify-content: space-around;
 }
 
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div p {
+  margin: 66px auto 44px;
+  font-size: 44px;
+}
+
 .unlock-class {
 	animation: vertical-unlock 0.35s 0s;
+}
+
+button.reveal-button-class {
+  width: 50%;
 }
 
 @keyframes vertical-unlock {
@@ -33,4 +49,14 @@ tui-tabs {
 	100% {
 		transform: translateY(0);
 	}
+}
+
+.effect-green {
+  animation: color-change-green 1s infinite;
+}
+
+@keyframes color-change-green {
+  0% { color: #e3e3e3; }
+  50% { color: #b7b1b1; }
+  100% { color: #e3e3e3; }
 }

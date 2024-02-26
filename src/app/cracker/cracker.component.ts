@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
@@ -33,13 +33,21 @@ export class CrackerComponent implements OnInit {
 	readonly locked = 'tuiIconLockLarge';
 
 	riddlesAndAnswers: Raa[] = [
-		{ id: 0, riddle: 'Who am I?', answer: 'yes', icon: LockStatus.LOCKED, disabled: false },
+		{
+			id: 0,
+			riddle:
+				'Asking a question, <br>here am I, where am I, <br><br>here am I, where am I, <br>here am I, where am I, here am I',
+			answer: 'yes',
+			icon: LockStatus.LOCKED,
+			disabled: false,
+		},
 		{ id: 1, riddle: 'What am I?', answer: 'de', icon: LockStatus.LOCKED, disabled: true },
 		{ id: 2, riddle: 'Where am I?', answer: 'rr', icon: LockStatus.LOCKED, disabled: true },
 	];
 	currentRAA = this.riddlesAndAnswers[0];
 
-	revealCryptexAnswer: boolean = false;
+	revealCryptexAnswerButton: boolean = false; // TODO false
+	showCryptexAnswer: boolean = false;
 
 	readonly inputForm = new FormGroup({
 		textValue: new FormControl(''),
@@ -53,6 +61,11 @@ export class CrackerComponent implements OnInit {
 		this.currentRAA = rAndA;
 	}
 
+	showAnswer() {
+		console.log('show');
+		this.showCryptexAnswer = true;
+	}
+
 	receiveData($event: Raa) {
 		console.log('### IN PARENT');
 		console.log($event);
@@ -63,7 +76,7 @@ export class CrackerComponent implements OnInit {
 			this.currentRAA = this.riddlesAndAnswers[$event.id + 1];
 		} else {
 			console.log('winner!');
-			this.revealCryptexAnswer = true;
+			this.revealCryptexAnswerButton = true;
 		}
 
 		// TODO update here
