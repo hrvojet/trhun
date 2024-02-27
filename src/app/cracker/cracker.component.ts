@@ -34,12 +34,12 @@ export class CrackerComponent implements OnInit {
 	readonly locked = 'tuiIconLockLarge';
 
 	riddlesAndAnswers: Raa[] = [
-		{ id: 0, riddle: zgrade, answer: 'bed users', icon: LockStatus.LOCKED, disabled: false },
-		{ id: 1, riddle: zrak, answer: 'Angelica Humpback', icon: LockStatus.LOCKED, disabled: true },
-		{ id: 2, riddle: prijatelji, answer: 'mtiahsfkhm', icon: LockStatus.LOCKED, disabled: true },
-		{ id: 3, riddle: hvala, answer: 'loud Benton', icon: LockStatus.LOCKED, disabled: true },
-		{ id: 4, riddle: divovi, answer: 'thrashed', icon: LockStatus.LOCKED, disabled: true },
-		{ id: 5, riddle: grad, answer: 'portugal', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 0, riddle: zrak, answer: 'loud Benton', icon: LockStatus.LOCKED, disabled: false },
+		{ id: 1, riddle: prijatelji, answer: 'mtiahsfkhm', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 2, riddle: hvala, answer: 'Angelica Humpback', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 3, riddle: divovi, answer: 'thrashed', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 4, riddle: grad, answer: 'portugal', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 5, riddle: zgrade, answer: 'bed users', icon: LockStatus.LOCKED, disabled: true },
 	];
 	currentRAA = this.riddlesAndAnswers[0];
 

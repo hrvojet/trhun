@@ -4,3 +4,13 @@ tui-root {
 	margin: 20px;
 	font-size: 15px;
 }
+
+@font-face {
+  font-family: MADELikesScript;
+  src: url(assets/fonts/MADELikesScript.ttf.woff) format("opentype");
+}
+
+.test-styleeee {
+  font-size: 38px;
+  font-family: MADELikesScript, serif;
+}
