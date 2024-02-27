@@ -7,6 +7,7 @@ import { TuiInputModule, TuiInputNumberModule, TuiTabsModule } from '@taiga-ui/k
 import { CrackerInputComponent } from './cracker-input/cracker-input.component';
 import { LockStatus } from './enum/lock-status';
 import { Raa } from './model/raa';
+import { divovi, grad, hvala, prijatelji, zgrade, zrak } from './model/RiddleText';
 
 @Component({
 	selector: 'app-cracker',
@@ -33,16 +34,12 @@ export class CrackerComponent implements OnInit {
 	readonly locked = 'tuiIconLockLarge';
 
 	riddlesAndAnswers: Raa[] = [
-		{
-			id: 0,
-			riddle:
-				'Asking a question, <br>here am I, where am I, <br><br>here am I, where am I, <br>here am I, where am I, here am I',
-			answer: 'yes',
-			icon: LockStatus.LOCKED,
-			disabled: false,
-		},
-		{ id: 1, riddle: 'What am I?', answer: 'Bar', icon: LockStatus.LOCKED, disabled: true },
-		{ id: 2, riddle: 'Where am I?', answer: 'rr', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 0, riddle: zgrade, answer: 'bed users', icon: LockStatus.LOCKED, disabled: false },
+		{ id: 1, riddle: zrak, answer: 'Angelica Humpback', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 2, riddle: prijatelji, answer: 'mtiahsfkhm', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 3, riddle: hvala, answer: 'loud Benton', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 4, riddle: divovi, answer: 'thrashed', icon: LockStatus.LOCKED, disabled: true },
+		{ id: 5, riddle: grad, answer: 'portugal', icon: LockStatus.LOCKED, disabled: true },
 	];
 	currentRAA = this.riddlesAndAnswers[0];
 

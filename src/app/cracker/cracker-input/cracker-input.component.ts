@@ -68,7 +68,7 @@ export class CrackerInputComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	submitAnswer() {
-		if (this.textValue.value === this.incomingRaa.answer) {
+		if (this.textValue.value?.toLowerCase() === this.incomingRaa.answer.toLowerCase().trim()) {
 			this.rAAEmitter.emit(this.incomingRaa);
 			this.cdr.detectChanges();
 			if (this.incomingRaa.id === 2) {
